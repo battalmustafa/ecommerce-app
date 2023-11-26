@@ -1,5 +1,5 @@
 export default function currencyFormat(num: number) {
-    return "$ " + // text starts with currency symbol
+    return "$" + // text starts with currency symbol
       num
         .toFixed(2) // always two decimal digits
         .replace(".", ",") // replace decimal point character with ,

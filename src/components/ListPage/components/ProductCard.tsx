@@ -37,7 +37,7 @@ const {addToCart} = useCart()
   };
   return (
     <Card sx={{padding: '0px',borderRadius: '10px'}}>
-        <div className='bg-secondary p-2'>
+        <div className='bg-secondary p-2 flex justify-center'>
         <Chip style={{ backgroundColor: '#c24b5a', color: '#ffffff' }} label={product.discount} size="small" color="primary" />
         <img className="w-60 h-60 " src={product.image} alt={product.name} />
         </div>
@@ -56,8 +56,9 @@ const {addToCart} = useCart()
         /> 
         <span>{"(" + product.rating + ")"}</span></div>
             <Typography variant="body2" className="text-red-700">
-             {currencyFormat(product.price)}
-              <span className='line-through text-gray-500 text-xs'>  {currencyFormat(product.originalPrice)}</span>
+          {currencyFormat(product.price)}
+              <span className='line-through text-gray-500 text-xs pl-1'> 
+            {currencyFormat(product.originalPrice)}</span>
             </Typography>
           </div>
           <div className="flex flex-col items-center pl-4">
