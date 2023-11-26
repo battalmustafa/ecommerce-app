@@ -35,7 +35,7 @@ const Header: React.FC = () => {
 
       <SearchBar />
   </div> :
-  <div className='flex justify-between items-center mx-auto max-w-6xl xs:flex-col py-4 bg-white'>
+  <div className='flex justify-between items-center mx-auto max-w-6xl py-4 bg-white'>
   <Logo />
   <SearchBar />
   <Button onClick={handleCartIconClick} color="inherit">
