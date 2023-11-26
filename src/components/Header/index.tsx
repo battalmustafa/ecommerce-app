@@ -34,6 +34,7 @@ const Header: React.FC = () => {
       </Button>
 
       <SearchBar />
+      <CartModal open={cartDialogOpen} onClose={handleCartDialogClose} />
   </div> :
   <div className='flex justify-between items-center mx-auto max-w-6xl py-4 bg-white'>
   <Logo />
