@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Badge, Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-
 import Logo from './components/Logo';
 import SearchBar from './components/SearchBar';
 import CartModal from './components/CartModal';
@@ -20,24 +19,35 @@ const Header: React.FC = () => {
   const handleCartDialogClose = () => {
     setCartDialogOpen(false);
   };
-
+  const isMobile = useSelector((state: RootState) => state.general.isMobile); 
+console.log(isMobile);
   return (
-    <div className='grid grid-cols-12 sm:grid-rows-2 mt-8 px-4'>
-    <div className='col-span-12 sm:col-span-3 sm:row-span-1 sm:flex'>
+   
+    <>
+    {isMobile ?
+     <div className='flex flex-wrap items-center justify-center'>
+    
       <Logo />
-    </div>
-    <div className='col-span-12 sm:col-span-6 sm:row-span-1 sm:flex'>
-      <SearchBar />
-    </div>
-    <div className='col-span-12 sm:col-span-3 sm:row-span-1 sm:flex justify-end items-center'>
       <Button onClick={handleCartIconClick} color="inherit">
-      <Badge badgeContent={cartItems.length} color="error">
-        <ShoppingCartIcon />
-      </Badge>
-       </Button>
-    </div>
-      <CartModal open={cartDialogOpen} onClose={handleCartDialogClose} />
-    </div>
+        <Badge badgeContent={cartItems.length} color="error">
+          <ShoppingCartIcon />
+        </Badge>
+      </Button>
+
+      <SearchBar />
+  </div> :
+  <div className='flex justify-between items-center mx-auto max-w-6xl xs:flex-col mt-4 bg-white'>
+  <Logo />
+  <SearchBar />
+  <Button onClick={handleCartIconClick} color="inherit">
+    <Badge badgeContent={cartItems.length} color="error">
+      <ShoppingCartIcon />
+    </Badge>
+  </Button>
+    <CartModal open={cartDialogOpen} onClose={handleCartDialogClose} />
+</div> }
+    </>
+    
   
   );
 };
