@@ -39,7 +39,7 @@ const {addToCart} = useCart()
     <Card sx={{padding: '0px',borderRadius: '10px'}}>
         <div className='bg-secondary p-2'>
         <Chip style={{ backgroundColor: '#c24b5a', color: '#ffffff' }} label={product.discount} size="small" color="primary" />
-        <img className="w-60 h-60 " src={product.image} alt={product.name} />
+        <div className='flex justify-center'><img className="w-60 h-60 " src={product.image} alt={product.name} /></div>
         </div>
         <CardContent>
         <div className='flex justify-between bg-white'>
