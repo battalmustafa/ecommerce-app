@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToCartRedux } from '../../../redux/slices/cartSlice';
-import { Card, CardContent, Chip, Rating, Typography, IconButton, CardMedia, Button } from '@mui/material';
+import {  useSelector } from 'react-redux';
+import { Card, CardContent, Chip, Rating, Typography, Button } from '@mui/material';
 import { Add, Remove } from '@mui/icons-material';
 import currencyFormat from '../../../utils/currencyFormat';
 import { RootState } from '../../../redux/store';
@@ -23,9 +22,8 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
-  const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.cartItems);
-const {addToCart, removeFromCart} = useCart()
+const {addToCart} = useCart()
   const handleIncrease = () => {
     setQuantity(quantity + 1);
   };

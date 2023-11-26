@@ -23,7 +23,6 @@ const fetchApiData = async (url: string): Promise<ApiResponse> => {
     throw new Error(`Error fetching data: ${error}`);
   }
 
-  return { data: undefined };
 };
 
 export default fetchApiData;

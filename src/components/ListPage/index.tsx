@@ -9,7 +9,6 @@ const SearchList: React.FC = () => {
 useEffect(() => {
     const fetchData = async () => {
         try {
-          const apiUrl = 'https://example.com/api/data';
           const apiResponse = await fetchApiData(productAPI);
             setproducts(apiResponse.data);
           console.log(apiResponse.data);

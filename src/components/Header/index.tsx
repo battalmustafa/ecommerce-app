@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Badge, Button, Grid } from '@mui/material';
+import { Badge, Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import Logo from './components/Logo';
