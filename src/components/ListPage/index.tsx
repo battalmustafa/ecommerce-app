@@ -20,13 +20,16 @@ useEffect(() => {
       fetchData();
 }, []);
   return (
-    <Grid container spacing={2} justifyContent="center" mt={8} >
+    <div className='bg-background min-h-screen pt-4 '>
+      <Grid container spacing={2} justifyContent="center" mt={8}>
       {products && products.map((product:Product) => (
         <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
           <ProductCard product={product} />
         </Grid>
       ))}
     </Grid>
+    </div>
+    
   );
 };
 

@@ -20,7 +20,6 @@ const Header: React.FC = () => {
     setCartDialogOpen(false);
   };
   const isMobile = useSelector((state: RootState) => state.general.isMobile); 
-console.log(isMobile);
   return (
    
     <>
@@ -36,7 +35,7 @@ console.log(isMobile);
 
       <SearchBar />
   </div> :
-  <div className='flex justify-between items-center mx-auto max-w-6xl xs:flex-col mt-4 bg-white'>
+  <div className='flex justify-between items-center mx-auto max-w-6xl xs:flex-col py-4 bg-white'>
   <Logo />
   <SearchBar />
   <Button onClick={handleCartIconClick} color="inherit">
