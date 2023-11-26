@@ -8,6 +8,8 @@ import { Dialog, DialogContent, DialogTitle, Grid } from '@mui/material';
 import ProductCard from '../../ListPage/components/ProductCard';
 import fetchApiData from '../../../utils/fetchApiData';
 import CloseIcon from '@mui/icons-material/Close';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
 interface SearchResultModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -70,6 +72,8 @@ const SearchBar: React.FC<SearchBarProps> = () => {
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+  const isMobile = useSelector((state: RootState) => state.general.isMobile); 
+
 
   return (
     <div className='flex justify-stretch mx-auto'>
@@ -86,7 +90,7 @@ const SearchBar: React.FC<SearchBarProps> = () => {
               </IconButton>
             </InputAdornment>
           ),
-          style: { borderRadius: '25px 0 0 25px', height: '40px', width: '414px' },
+          style: { borderRadius: '25px 0 0 25px', height: '40px', width: isMobile ? '200px' : '600px' },
         }}
       />
       <Button
